@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>TeknoLand Page</h1>
+<h1><b><center>TeknoLand Page</center></b></h1>
 
     <h5>Name:</h5>
     <p>{{name}}</p>
@@ -12,25 +12,26 @@
     <p>Kamu menyimpan {{ num_items }} item pada aplikasi ini.</p>
     {% endwith %}
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Amount</th>
-    </tr>
-
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    {% for product in products %}
+    {% if products %}
+    <table width="90%" border="1" cellspacing="0">
         <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.amount}}</td>
+            <th>Nama Produk</th>
+            <th>Harga</th>
+            <th>Jumlah</th>
+            <th>Deskripsi</th>
         </tr>
-    {% endfor %}
-</table>
+        {% for product in products %}
+        <tr>
+            <td><center>{{ product.name }}</center></td>
+            <td><center>{{ product.price }}</center></td>
+            <td><center>{{ product.amount }}</center></td>
+            <td><center>{{ product.description }}</center></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Tidak ada item yang disimpan pada aplikasi ini.</p>
+{% endif %}
 
 <br />
 
@@ -41,3 +42,4 @@
 </a>
 
 {% endblock content %}
+
