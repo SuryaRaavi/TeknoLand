@@ -7,6 +7,11 @@
 
     <h5>Class:</h5>
     <p>{{class}}</p>
+    
+    {% with num_items=products|length %}
+    <p>Kamu menyimpan {{ num_items }} item pada aplikasi ini.</p>
+    {% endwith %}
+
 <table>
     <tr>
         <th>Name</th>
