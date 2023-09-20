@@ -1,7 +1,42 @@
 Nama: Surya Raavi Adiputra
 NPM: 2206082404
 Kelas: PBP-E
-								
+
+Tugas-3
+1. Apa perbedaan antara form POST dan form GET dalam Django?
+   POST:
+   - Digunakan untuk mengirim data ke server untuk diproses.
+   - Data dikirimkan dalam tubuh permintaan HTTP dan tidak terlihat di URL.
+   - Lebih aman untuk mengirim data sensitif.
+   - Tidak ada batasan ukuran data bawaan.
+   GET:
+   - Digunakan untuk mengambil data dari server.
+   - Data dikirimkan dalam query string dan terlihat di URL.
+   - Lebih cocok untuk pencarian atau tindakan yang tidak mengubah data di server.
+   - Terdapat batasan ukuran data yang dapat dikirimkan karena batasan panjang URL.
+
+2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+   Perbedaan utama JSON dan XML terletak di formatnya dimana JSON menggunakan pasangan kunci-nilai untuk membuat struktur seperti peta, sedangkan XML menyimpan data dalam struktur pohon yang menyajikan lapisan informasi secara berurut. Dalam hal syntax, JSON memiliki syntax yang lebih sederhana dibandingkan XML yang terbilang kompleks. File JSON juga lebih cepat diuraikan dibandingkan file XML. Namun, XML memiliki tipe data yang lebih luas dibandingkan JSON. Tidak hanya itu, dalam hal keamanan, penggunaan JSON terbilang lebih aman dibandingkan XML. Lalu, perbedaan keduanya dengan HTML terletak di fungsinya dimana jika JSON dan XML berfungsi untuk mengirim dan bertukar data, HTML berfungsi untuk membuat halaman web dengan elemen-elemen markup yang mendefinisikan struktur dan tampilan konten web.
+
+3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+   JSON lebih sering digunakan dalam pertukaran data karena beberapa hal, yaitu sintaksi yang sederhana dan mudah dibaca oleh manusia, format yang digunakan didukung oleh banyak bahasa pemrograman, mendukung data kompleks karena memiliki tipe data yang fleksibel, cenderung lebih ringan dalam hal kinerja dari pada format lain, memiliki dokumentasi yang luas dan beragam, dan memiliki tingkat keamanan tinggi sehingga dapat mencegah serangan injeksi kode.
+   
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+   Langkah paling awal yang harus dilakukan sebelum melakukan penambahan atau perubahan pada direktori proyek adalah membuat virtual environment untuk mencegah terjadinya konflik antar dua proyek atau lebih.
+   - Membuat input forms dan menambahkan fungsi http pada views
+     Tahap ini dilakukan dengan membuat skeleton atau templates untuk menjaga konsistensi kerangka views dalam aplikasi main dimana dilakukan dengan membuat folder templates pada main dan menambahkan file base.html sebagai template dasar. Setelah berhasil membuat skeleton, mendaftarkan templates sebagai direktori dasar dalam kerangka html dalam file settings.py bagian TEMPLATES pada sub direktori proyek. Lakukan juga modifikasi pada main.html yang terletak di direktori main/templates untuk mengaplikasikan base.html. Langkah selanjutnya adalah membuat file forms.py dengan melakukan import modul main.models untuk mengambil objek Item pada direktori main yang bertujuan untuk menyimpan data atau input dalam bentuk objek yang dalam hal ini objeknya adalah Item dan juga menambahkan fields yang dalam hal ini adalah atribut dari Item. Selanjutnya, modifikasi views.py dalam direktori main dengan menambahkan beberapa modul yang salah satunya adalah main.forms yang bertujuan untuk memproses request dari user. Dalam file views.py, menambahkan fungsi baru bernama create_product yang intinya berfungsi untuk memvalidasi dan mendata input dari user dengan mendefinisikannya menjadi ProductForm yang mana adalah objek yang diambil dari modul  main.forms, serta redirects setelah data berhasil dibuat dan disimpan. Tahap berikutnya adalah memodifikasi fungsi show_main dengan menambahkan suatu variabel products yang menyimpan informasi mengenai berbagai objek Item untuk ditampilkan nanti di main.html. Setelah melakukan modifikasi pada views.py, pada urls.py dalam direktori main, menambahkan objek baru untuk diimport, yaitu create_product dan mendaftarkan create_product pada path url agar nantinya bisa diakses. Langkah selanjutnya adalah membuat suatu file create_product.html yang intinya berfungsi untuk menampilkan fields forms yang sudah ditentukan sebelumnya dalam bentuk table dan mengirim request user ke views.
+   - Menambahkan 4 fungsi views, yaitu XML, JSON, XML by ID, dan JSON by ID
+     Tahap pertama dilakukan untuk menambahkan HttpResponse dari modul django.http dan serializers dari modul django.core. Lalu, menambahkan fungsi show_xml dan show_json. Pada kedua fungsi tersebut menambahkan suatu variabel untuk mengambil seluruh objek item, yaitu "data = Item.objects.all()" dan menambahkan return yang berisi function berupa HttpResponse yang berisi parameter data hasil query yang sudah diserialisasi menjadi XML dalam fungsi show_xml dan JSON dalam fungsi show_json dan parameter content_type="application/xml" dalam fungsi show_xml dan content_type="application/json" dalam fungsi show_json. Selanjutnya, membuat dua fungsi xml dan json untuk menampilkan data berdasarkan id, yaitu show_json_by_id dan show_xml_by_id. Isi dalam fungsi tersebut hampir sama dengan kedua fungsi show_xml dan show_json sebelumnya dimana yang membedakan hanya dengan memodifikasi variabel data menjadi "data = Item.objects.filter(pk=id)" agar nantinya url json dan xml bisa mengambil data berdasarkan id.
+   - Membuat routing URL pada views
+     Melakukan import fungsi modul main.views "from main.views import show_main, create_product, show_xml, show_json, show_xml_by_id, show_json_by_id" ke urls.py dalam direktori main dan menambahkan url patterns  "path('xml/', show_xml, name='show_xml'), path('json/', show_json, name='show_json'), path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'), path('json/<int:id>/', show_json_by_id, name='show_json_by_id')" agar fungsi-fungsi tersebut bisa diakses oleh url.
+
+5. Hasil screenshot akses link di Postman terlampir di link drive berikut
+   https://drive.google.com/drive/folders/1tkPnrIuyEzhl3u2BvTAUGQnA7o7HULxG?usp=sharing
+
+
+
+
+
 Tugas-2
 
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
