@@ -2,6 +2,39 @@ Nama: Surya Raavi Adiputra
 NPM: 2206082404
 Kelas: PBP-E
 
+Tugas-4
+1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+   UserCreationForm adalah impor formulir bawaan dalam Django yang memudahkan pembuatan formulir pendaftaran pengguna dalam aplikasi web.
+   - Kelebihan:
+     1. Kode yang digunakan sederhana
+     2. Menyertakan validasi terintegrasi
+     3. Mudah dihubungkan dengan model pengguna bawaan yang menggunakan Django
+   - Kekurangan:
+     1. Memiliki fitur yang cukup terbatas
+     2. Tampilan formulir yang standar
+
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+   Dalam konteks Django, autentikasi adalah sebuah proses untuk mengecek apakah pengguna memiliki akses ke suatu sistem, sedangkan otorisasi adalah sebuah proses yang dilakukan setelah autentikasi untuk menentukan apa yang boleh dilakukan oleh pengguna yang sudah terautentikasi dalam aplikasi web/sistem. Autentikasi dan otorisasi penting untuk diterapkan dengan tujuan untuk memastikan bahwa pengguna yang mengakses aplikasi web/sistem adalah pengguna yang sah dan bahwa mereka hanya memiliki akses ke fungsi dan data yang sesuai dengan peran atau izin mereka. 
+
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+   Dalam konteks aplikasi web, cookies adalah riwayat aktivitas pengguna dalam suatu aplikasi web yang dicatat dalam bentuk session id yang nantinya session id ini digunakan dalam respon pengguna berikutnya. Untuk mengelola data dari pengguna, Django menggunakan komponen built-in middleware dimana komponen ini menggunakan cookies untuk menyimpan session id pada sisi klien dan session id aktual pada sisi server.
+   Session id yang sudah disimpan bisa diakses menggunakan modul dan fungsi built-in dalam Django, yaitu HttpRequest.COOKIES, HttpResponse.set_cookie(), dan HttpResponse.delete_cookie() untuk membaca, mengatur, dan menghapus cookie.
+
+4. Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+   Penggunaan cookies dalam pengembangan web tidak sepenuhnya aman dimana masih ada sejumlah risiko potensial yang tetap harus diwaspadai. Risiko potensial tersebut, yaitu:
+   - Cross-Cite Scripting: Risiko ini bisa terjadi apabila penyerang melakukan eksploitasi pada cookies sehingga informasi cookie pengguna bisa dicuri.
+   - Fiksasi sesi: Dalam jenis serangan ini, penyerang mendorong pengguna untuk menggunakan ID sesi penyerang atau orang lain. Ini dapat dilakukan dengan menggunakan jalur arahan browser cookie, maka pengguna berpura-pura menjadi orang lain. Dengan menggunakan metode ini, penyerang dapat mendesak pengguna untuk masuk sebagai penyerang di berbagai tingkat aplikasi.
+   - Risiko Man-in-the-Middle (MitM): Jika koneksi antara peramban pengguna dan server tidak aman, cookies dapat dicegat oleh penyerang yang berada di tengah-tengah (man-in-the-middle).
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+   - Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar dan menampilkan detail informasi pengguna yang sedang logged in seperti username serta menerapkan cookies seperti last login pada halaman utama aplikasi.
+     Untuk mengimplementasikan fungsi registrasi, login, dan logout, saya memodifikasi file views.py pada subdirektori main. Di dalam file views.py, saya menambahkan beberapa fungsi Django, yaitu redirect, UserCreationForm, dan messages yang mana fungsi tersebut nantinya akan diimplementasikan pada beberapa fungsi. Implementasi UserCreationForm terdapat pada fungsi register dalam views.py yang bertujuan untuk membuat formulir registrasi pengguna dan memvalidasi input pengguna pada formulir untuk nantinya data pengguna yang sudah diinput dan divalidasi akan disimpan. Setelah proses tersebut berhasil, program interface akan menampilkan pesan dengan memanfaatkan modul messages yang menyatakan bahwa user berhasil mendaftar dan program akan melakukan redirect dengan memanfaatkan modul redirect. Setelah itu, saya membuat file HTML dengan nama register sebagai tampilan awal formulir registrasi. Untuk merender perubahan saat user mengakses url html register, saya menambahkan fungsi register dalam import main.views dan mendaftarkan fungsi register dan file HTML register dalam urlpatterns. Selanjutnya, untuk mengimplementasikan login, saya membuat fungsi baru bernama login_user pada views.py. Dalam fungsi ini, saya menerapkan request method POST dimana data yang dimasukkan oleh user tidak ditampilkan dalam URL. Setelah itu, saya juga mengimplementasikan proses autentikasi berdasarkan username dan password yang dimasukkan oleh user. Jika autentikasi berhasil, pengguna akan dibawa ke tampilan main.html. Untuk menampilkan halaman login, saya membuat file HTML dengan nama login pada subdirektori main/templates. Selanjutnya, saya menambahkan fungsi login_user pada url.py di subdirektori main dalam import main.views dan mendaftarkan fungsi login_user dan file HTML login pada urlpatterns. Tahap selanjutnya adalah membuat fungsi logout pada views.py. Sebelum membuat fungsi logout pada views.py, saya mengimport beberapa fungsi Django, yaitu HttpResponseRedirect, reverse, dan datetime. Implementasi HttpResponseRedirect dan reverse ditunjukkan pada fungsi logout dan login_user untuk melakukan redirect suatu response dimana value dari fungsi ini akan disimpan pada variabel response. Pada fungsi login_user, selain untuk menyimpan nilai dari fungsi HttpResponseRedirect, variabel response juga digunakan untuk mengatur riwayat penelusuran pengguna dengan memanfaatkan fungsi set_cookie(), sedangkan pada fungsi logout, variabel response digunakan untuk menghapus riwayat penelusuran pengguna dengan memanfaatkan fungsi delete_cookie(). Penggunaan modul atau fungsi built-in cookie Django, yaitu HttpRequest.COOKIES juga diterapkan pada fungsi show_main untuk menampilkan informasi login terakhir pengguna dimana last login ini nantinya akan ditampilkan pada main.html. 
+   - Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal
+     Untuk menerapkan hal ini, pengguna melakukan registrasi terlebih dahulu agar bisa menambahkan produk yang diinginkan. Setelah proses registrasi, pengguna akan diarahkan pada tampilan utama dimana pada tampilan utama ini, pengguna bisa menambahkan item dengan atribut nama, harga, deskripsi, dan jumlah.
+   - Menghubungkan model Item dengan User
+     Dalam menghubungkan model Item dengan User, hal pertama yang perlu dilakukan adalah menambahkan kode contrib.auth.models import User. Setelah itu, saya menambahkan variabel user dengan value dari models.ForeignKey(). Fungsi ForeignKey() itu berfungsi untuk mengasosiasikan user dengan produk dalam database dimana nilai dari ForeignKey ini unik untuk setiap user. Tahap selanjutnya adalah melakukan perubahan pada fungsi create_product di subdirektori main dengan menambahkan variabel commit dengan value False pada parameter fungsi save() yang bertujuan untuk mencegah Django agar tidak langsung menyimpan objek yang telah dibuat dari form langsung ke database. Dalam fungsi ini. juga ditambahkan product.user dengan value request.user yang bertujuan untuk menghubungkan produk milik pengguna dengan pengguna yang sedang login.
+     Langkah selanjutnya adalah mengubah 'nama' dalam context menjadi request.user.username untuk mengakses nama user yang sedang login. Setelah semua langkah tersebut dilakukan, saya melakukan migrasi pada model dengan menetapkan 1 pada default value untuk field user dan pada user id.
+
 Tugas-3
 1. Apa perbedaan antara form POST dan form GET dalam Django?
    POST:
