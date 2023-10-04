@@ -2,6 +2,60 @@ Nama: Surya Raavi Adiputra
 NPM: 2206082404
 Kelas: PBP-E
 
+Tugas-5
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya!
+   - Element Selector (Tag Selector):
+     1. Manfaat: Selector ini digunakan untuk mengganti gaya semua elemen HTML dengan tag yang cocok.
+     2. Kapan Menggunakan: Cocok untuk mengganti gaya secara global pada semua elemen dengan tag yang sama, misalnya mengubah gaya teks pada semua <p> atau mengatur margin untuk semua <ul>.
+   - Class Selector:
+     1. Manfaat: Class selector memungkinkan mengganti gaya pada elemen-elemen yang memiliki class yang sama tanpa memengaruhi elemen-elemen lain.
+     2. Kapan Menggunakan: Ideal untuk mengganti gaya pada elemen-elemen yang memiliki kesamaan dalam tampilan atau fungsi, seperti tombol dengan class "btn" untuk semua tombol.
+  - ID Selector:
+     1. Manfaat: ID selector digunakan untuk mengganti gaya pada elemen dengan ID yang unik dalam halaman, yang memungkinkan Anda mengganti gaya elemen secara khusus.
+     2. Kapan Menggunakan: Berguna saat ingin mengganti gaya elemen tertentu yang memiliki ID unik, seperti elemen header atau footer.
+
+2. Jelaskan HTML5 Tag yang kamu ketahui!
+   - <title>: Digunakan untuk mendefinisikan judul web yang ingin kita buat.
+   - <nav>: Digunakan untuk mengelompokkan elemen navigasi di dalam web, seperti menu.
+   - <section>: Digunakan untuk menandai bagian konten tertentu.
+   - <video> dan <audio>: Digunakan untuk menyematkan konten video dan audio ke dalam web.
+   - <input>: Biasanya digunakan dalam pembuatan formulir sebagai textfield, checkbox, radio button, dll dalam 
+              web.
+   - <button>: Digunakan untuk membuat tombol di dalam web.
+   - <header>: Digunakan untuk mendefinisikan header dari suatu web.
+   - <main>: Digunakan untuk mendefinisikan konten utama dari suatu web.
+
+3. Jelaskan perbedaan antara margin dan padding!
+   - Margin:
+    1. Margin didefinisikan sebagai ruang di luar elemen, antara elemen tersebut dan elemen-elemen lain di sekitarnya.
+    2. Margin biasanya digunakan untuk mengontrol jarak antara elemen dengan elemen-elemen lain di sekitarnya sehingga  memengaruhi tata letak keseluruhan halaman.
+    3. Margin hanya digunakan untuk memberikan jarak pada elemen, tidak dapat memberikan warna background.
+    4. Nilai margin dapat positif (menambahkan jarak) atau negatif (mengurangi jarak) dari elemen.
+  - Padding:
+    1. Padding biasanhya digunakan sebagai ruang di dalam elemen, antara batas elemen dan kontennya sendiri.
+    2. Padding digunakan untuk mengatur jarak antara konten elemen dan batas elemen itu sendiri sehingga memengaruhi tampilan elemen tersebut.
+    3. Padding dapat memiliki latar belakang atau warna yang berbeda, sehingga dapat digunakan untuk mengubah tampilan elemen.
+    4. Nilai padding selalu positif dan tidak bisa negatif
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap! Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+  - Pendekatan Styling:
+    1. Tailwind CSS: Tailwind mengikuti pendekatan "utility-first", di mana pendekatan ini memungkinkan pengembang untuk menggunakan kelas-kelas utilitas yang telah ada untuk mengatur gaya elemen-elemen di dalam web. 
+    2.  Bootstrap: Bootstrap menggunakan komponen yang telah dirancang sebelumnya sehingga pengembang bisa  memilih dan menggabungkan komponen-komponen ini untuk membangun tampilan web.
+  - Kustomisasi:
+    1. Tailwind CSS: Dengan didukung tingkat kustomisasi yang tinggi, pengembang dapat menyesuaikan setiap aspek tampilan dengan memodifikasi file konfigurasi dan membuat kelas kustom sendiri.
+    2. Bootstrap: Kustomisasi dalam Bootsrap sudah sudah diatur sebelumnya sesuai gaya bawaan sehingga kustomisasi lebih terbatas. 
+  - Ukuran dan Performa:
+    1. Tailwind CSS: Ukuran lebih ringan karena hanya menggunakan kelas yang benar-benar diperlukan. Dengan ukuran yang lebih ringan penggunaan Tailwind CSS dinilai menghasilkan performa yang lebih baik dalam hal pemuatan halaman.
+    2. Bootstrap: Ukuran yang lebih besar karena menyertakan banyak komponen dan gaya bawaan sehingga menghasilkan pemuatan halaman yang sedikit lebih lambat.
+  - Kapan Menggunakan Bootstrap:
+    Pengembang dapat menggunakan Bootstrap jika ingin mengembangkan situs web dengan cepat dengan sedikit usaha.
+    Jika Anda perlu mengembangkan situs web dengan cepat dan tidak ingin menghabiskan banyak waktu mengatur 
+  - Kapan Menggunakan Tailwind CSS:
+    Pengembang dapat menggunakan Tailwind CSS jika ingin mengembangkan situs web dengan lebih fleksibel dimana pengembang bisa melakukan kustomisasi setiap aspek tampilan dalam web dengan lebih leluasa dan menghindari pengembang dari kerangka kerja yang memuat banyak komponen yang tidak digunakan.
+     
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!
+   Dalam mengimplementasikan setiap checklist, saya menggunakan pendekatan Bootstrap untuk memodifikasi dan mendesain file html login, register, add product, edit product, dan daftar produk. Dalam setiap file tersebut saya mendefinisikan setiap class menggunakan <div> dimana nantinya setiap class tersebut saya jadikan selector untuk nantinya modifikasi background, font, alignment, text color, dll bisa dilakukan. Lalu, untuk tampilan laman login, daftar produk, add product, edit_product, dan register saya mengaplikasikan card.  
+
 Tugas-4
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
    UserCreationForm adalah impor formulir bawaan dalam Django yang memudahkan pembuatan formulir pendaftaran pengguna dalam aplikasi web.

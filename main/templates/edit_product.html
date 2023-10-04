@@ -1,17 +1,28 @@
 {% extends 'base.html' %}
 
 <style>
-    .btn{
+    .btn {
         background-color: lightblue;
     }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .clear-left::after {
+        content: "";
+        display: table;
+        clear: left;
+    }
 </style>
+
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-primary text-white">
-                    <h3 class="card-title text-center">Add New Product</h3>
+                    <h3 class="card-title text-center">Edit Product</h3>
                 </div>
                 <div class="card-body">
                     <form method="POST">
@@ -33,7 +44,7 @@
                             <textarea class="form-control" id="{{ form.description.id_for_label }}" name="{{ form.description.name }}" rows="4" placeholder="Enter product description"></textarea>
                         </div>
                         <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-primary">Add Product</button>
+                            <button type="submit" class="btn btn-primary">Edit Product</button>
                         </div>
                     </form>
                 </div>
