@@ -31,6 +31,8 @@ Tugas-6
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
    Untuk menerapkan AJAX GET dan POST serta collectstatic, saya menambahkan beberapa fungsi pada method view, yaitu get_product_json yang berfungsi untuk mengambil item product dari database, add_product_ajax yang berfungsi untuk menambahkan item menggunakan ajax. Implementasi fungsi tersebut saya terapkan pada file main.html pada subdirektori main/template. Setelah menambahkan beberapa fungsi ajax pada file main, saya juga menambahkan modal untuk menambahkan produk menggunakan ajax dan mengimplementasikan button tambahkan produk untuk mentrigger modal sehingga user bisa menambahkan produk.
+  
+tautan aplikasi:  http://surya-raavi-tugas.pbp.cs.ui.ac.id.
 
 
 Tugas-5
