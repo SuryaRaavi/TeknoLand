@@ -2,6 +2,37 @@ Nama: Surya Raavi Adiputra
 NPM: 2206082404
 Kelas: PBP-E
 
+Tugas-6
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming!
+   Synchronous Programming (Program Sinkron):
+   - Dalam synchronous programming, tugas-tugas dieksekusi secara berurutan, satu per satu.
+   - Ketika suatu tugas sedang berjalan, program akan menunggu tugas tersebut selesai sebelum melanjutkan ke tugas berikutnya.
+   - Program menjadi lambat jika tugas-tugasnya memerlukan waktu eksekusi yang lama.
+   Asynchronous Programming (Program Asinkron):
+   - Dalam asynchronous programming, tugas-tugas dieksekusi secara bersamaan atau berdampingan.
+   - Program tidak perlu menunggu tugas selesai sebelum melanjutkan ke tugas berikutnya. Sebaliknya, program akan melanjutkan eksekusi dan memeriksa kembali tugas yang berjalan saat diperlukan.
+   - Program tetap responsif dan efisien, terutama dalam kasus tugas-tugas yang memerlukan waktu lama, seperti mengakses jaringan atau sistem berkas
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+   Paradigma event-driven programming adalah pendekatan dalam pemrograman di mana program merespons peristiwa (events) yang terjadi, seperti interaksi pengguna atau kejadian lainnya, tanpa harus menjalankan kode secara berurutan atau menunggu tugas selesai. Dalam konteks JavaScript dan AJAX (Asynchronous JavaScript and XML), paradigma ini sangat relevan karena banyak operasi I/O-bound yang melibatkan asynchrony dan interaksi pengguna. Contoh penerapannya dalam tugas ini, yaitu implementasi button edit dan delete product yang mana kedua button tersebut dihubungkan dengan event-driving yang berbeda untuk melakukan edit dan penghapusan product.
+
+3. Jelaskan penerapan asynchronous programming pada AJAX!
+   Dalam asynchronous programming pada AJAX, pengembang dapat menggunakan XMLHttpRequest atau Fetch API untuk mengirim permintaan HTTP ke server dan menerima respon tanpa menghalangi eksekusi program lainnya. Saat mengirim permintaan ke server, pengembang dapat menentukan fungsi callback yang akan dipanggil ketika respon dari server tersedia. Ini memungkinkan program untuk melanjutkan eksekusi sementara menunggu respon dari server.
+
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+  - Fetch API
+    1. Fetch API adalah bagian dari JavaScript standar dan memberikan pendekatan yang lebih modern dalam melakukan permintaan HTTP asinkron
+    2. Memiliki pustaka yang lebih ringan dan dapat dikendalikan secara lebih baik dalam hal ukuran halaman web
+    3. Memungkinkan untuk melakukan permintaan HTTP dengan tingkat kontrol yang tinggi dan lebih banyak fleksibilitas dalam mengelola respons dan permintaan.
+  - JQuery
+    1. jQuery dirancang untuk menyederhanakan banyak tugas dalam pengembangan web, termasuk AJAX.
+    2. Memiliki pustaka yang lebih besar.
+    3. menyediakan metode sederhana untuk mengelola permintaan dan respons, tetapi kurang fleksibel dibandingkan dengan Fetch API.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+   Untuk menerapkan AJAX GET dan POST serta collectstatic, saya menambahkan beberapa fungsi pada method view, yaitu get_product_json yang berfungsi untuk mengambil item product dari database, add_product_ajax yang berfungsi untuk menambahkan item menggunakan ajax. Implementasi fungsi tersebut saya terapkan pada file main.html pada subdirektori main/template. Setelah menambahkan beberapa fungsi ajax pada file main, saya juga menambahkan modal untuk menambahkan produk menggunakan ajax dan mengimplementasikan button tambahkan produk untuk mentrigger modal sehingga user bisa menambahkan produk.
+
+
 Tugas-5
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya!
    - Element Selector (Tag Selector):
