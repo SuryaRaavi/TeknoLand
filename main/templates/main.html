@@ -114,7 +114,6 @@
         document.getElementById("product_table").innerHTML = htmlString
     }
 
-    // refreshProducts()
     function addProduct() {
         fetch("{% url 'main:add_product_ajax' %}", {
             method: "POST",
