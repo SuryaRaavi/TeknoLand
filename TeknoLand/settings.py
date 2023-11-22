@@ -22,11 +22,6 @@ env = environ.Env()
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s7m_n0qp+flo73tf4nyeek1#oi^6$!hk*_vrfgu$229%7b*jay'
-PRODUCTION = env.bool('PRODUCTION', False)
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
@@ -34,6 +29,11 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SAMESITE = 'None'
 SESSION_COOKIE_SAMESITE = 'None'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-s7m_n0qp+flo73tf4nyeek1#oi^6$!hk*_vrfgu$229%7b*jay'
+PRODUCTION = env.bool('PRODUCTION', False)
+
+# SECURITY WARNING: don't run with debug turned on in production!
 
 ALLOWED_HOSTS = ["*"]
 

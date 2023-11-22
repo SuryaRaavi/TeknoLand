@@ -46,4 +46,4 @@ def logout(request):
         return JsonResponse({
         "status": False,
         "message": "Logout gagal."
-        }, status=401)
+        }, status=401)   
